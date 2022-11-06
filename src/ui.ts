@@ -31,5 +31,5 @@ export function print_length(length: number, precision: number = 2): void {
 }
 
 export function print_error(error: any): void {
-    console.error(chalk.bgRed.white('ERROR:'), error);
+    console.error(chalk.bgRed.black(' ERROR: '), error?.message);
 }
