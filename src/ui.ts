@@ -27,7 +27,7 @@ export function print_path(path: number[], points: Point[]): void {
 
 export function print_length(length: number, precision: number = 2): void {
     if (typeof precision !== "number" || isNaN(precision) || precision < 0) precision = 2;
-    console.log("Length:", length.toPrecision(precision));
+    console.log("Length:", length.toFixed(precision));
 }
 
 export function print_error(error: any): void {
