@@ -1,5 +1,4 @@
 import { opt2_corssing_paths } from "../src/opt2";
-import { Graph } from "../src/types/Graph";
 
 describe('opt2', () => {
     it('should optimise path in the graph', () => {
@@ -11,22 +10,10 @@ describe('opt2', () => {
             [4.00, 2.24, 4.47, 5.10, 0],
         ];
 
-        const inputGraph: Graph = [
-            [0, 1, 0, 0, 0],
-            [0, 0, 0, 0, 1],
-            [0, 0, 0, 1, 0],
-            [1, 0, 0, 0, 0],
-            [0, 0, 1, 0, 0],
-        ];
+        const inputPath = [ 0, 1, 4, 2, 3, 0 ];
 
-        const optimisedGraph: Graph = [
-            [0, 1, 0, 0, 0],
-            [0, 0, 0, 0, 1],
-            [1, 0, 0, 0, 0],
-            [0, 0, 1, 0, 0],
-            [0, 0, 0, 1, 0],
-        ];
+        const outputPath = [ 0, 1, 4, 3, 2, 0 ];
 
-        expect(JSON.stringify(opt2_corssing_paths(inputGraph, distanceMatrix, 0))).toEqual(JSON.stringify(optimisedGraph));
+        expect(opt2_corssing_paths(inputPath, distanceMatrix)).toEqual(outputPath);
     });
 })

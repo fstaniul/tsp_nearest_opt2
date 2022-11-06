@@ -5,6 +5,6 @@ import { Matrix } from "./types/Matrix";
 
 export function calculate_shortest_hamilton_cycle(distanceMatrix: Matrix, startingPoint: number): number[] {
     const graph = construct_nearest_neighbour_graph(distanceMatrix, startingPoint);
-    const optimisedGraph = opt2_corssing_paths(graph, distanceMatrix, startingPoint);
-    return get_path(optimisedGraph, startingPoint);
+    const path = get_path(graph, startingPoint);
+    return opt2_corssing_paths(path, distanceMatrix);
 }

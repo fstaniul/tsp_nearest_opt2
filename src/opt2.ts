@@ -1,9 +1,7 @@
-import { Graph } from "./types/Graph";
 import { Matrix } from "./types/Matrix";
-import { construct_graph_from_path, get_path } from "./graphs";
 
-export function opt2_corssing_paths(graph: Graph, distanceMatrix: Matrix, startingPoint: number): Graph {
-    let path = get_path(graph, startingPoint);
+export function opt2_corssing_paths(path: number[], distanceMatrix: Matrix): number[] {
+    path = path.slice();
 
     for (let i = 0; i < path.length - 3; i++) {
         const Ax = path[i];
@@ -25,6 +23,6 @@ export function opt2_corssing_paths(graph: Graph, distanceMatrix: Matrix, starti
             }
         }
     }
-
-    return construct_graph_from_path(path);
+    
+    return path;
 }

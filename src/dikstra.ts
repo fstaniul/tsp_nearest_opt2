@@ -9,11 +9,12 @@ export function construct_nearest_neighbour_graph(distanceMatrix: Matrix, starti
 
     let currentPoint = startingPoint;
     while (visited.size < points) {
+        if (visited.has(currentPoint)) throw new Error('Visiting same point twice!');
         visited.add(currentPoint);
 
         let minimumIndex: number | null = null;
         for (let i = 0; i < points; i++) {
-            if (visited.has(i) || i === currentPoint) continue;
+            if (visited.has(i)) continue;
             if (minimumIndex === null) {
                 minimumIndex = i;
             } else if (distanceMatrix[currentPoint][i] < distanceMatrix[currentPoint][minimumIndex]) {

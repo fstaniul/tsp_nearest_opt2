@@ -62,7 +62,7 @@ export function construct_graph_from_path(path: number[]): Graph {
     return graph;
 }
 
-export function calculate_paths_distance(path: number[], distanceMatrix: Matrix): number {
+export function calculate_paths_length(path: number[], distanceMatrix: Matrix): number {
     validate_path(path);
 
     let distance = 0;

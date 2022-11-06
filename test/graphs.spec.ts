@@ -1,5 +1,5 @@
 import {
-    calculate_paths_distance,
+    calculate_paths_length,
     construct_empty_graph,
     construct_graph_from_path,
     get_incoming_edge,
@@ -104,7 +104,7 @@ describe("graphs", () => {
             [4, 3, 0],
         ];
         const path = [0, 1, 2, 0];
-        const distance = calculate_paths_distance(path, distanceMatrix);
+        const distance = calculate_paths_length(path, distanceMatrix);
         expect(distance).toEqual(9);
     });
 });
