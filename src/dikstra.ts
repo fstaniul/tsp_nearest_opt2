@@ -9,7 +9,6 @@ export function construct_nearest_neighbour_graph(distanceMatrix: Matrix, starti
 
     let currentPoint = startingPoint;
     while (visited.size < points) {
-        if (visited.has(currentPoint)) throw new Error('Visiting same point twice!');
         visited.add(currentPoint);
 
         let minimumIndex: number | null = null;
@@ -22,7 +21,7 @@ export function construct_nearest_neighbour_graph(distanceMatrix: Matrix, starti
             }
         }
 
-        if (!minimumIndex) {
+        if (minimumIndex === null) {
             graph[currentPoint][startingPoint] = 1;
         } else {
             graph[currentPoint][minimumIndex] = 1;

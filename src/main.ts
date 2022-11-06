@@ -2,7 +2,7 @@ import { calculate_distance_matrix } from "./distance_matrix";
 import { calculate_paths_length } from "./graphs";
 import { calculate_shortest_hamilton_cycle } from "./hamilton_cycle";
 import { read_points_from_file } from "./io";
-import { get_point_index_from_label, print_length, print_path } from "./ui";
+import { get_point_index_from_label, print_error, print_length, print_path } from "./ui";
 
 main();
 

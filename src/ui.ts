@@ -1,3 +1,4 @@
+import chalk from "chalk";
 import { Point } from "./types/Point";
 
 export function get_point_label(pointIndex: number): string {
@@ -30,5 +31,5 @@ export function print_length(length: number, precision: number = 2): void {
 }
 
 export function print_error(error: any): void {
-    console.error(error);
+    console.error(chalk.bgRed.white('ERROR:'), error);
 }

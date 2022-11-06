@@ -2,8 +2,8 @@ import { construct_nearest_neighbour_graph } from "../src/dikstra";
 import { calculate_distance_matrix } from "../src/distance_matrix";
 import { TEST_POINTS } from "./points";
 
-describe('dikstra', () => {
-    it('should construct graph by going to nearest neighbour', () => {
+describe("dikstra", () => {
+    it("should construct graph by going to nearest neighbour", () => {
         const distanceMatrix = calculate_distance_matrix(TEST_POINTS);
         const graph = construct_nearest_neighbour_graph(distanceMatrix, 0);
 
@@ -15,4 +15,17 @@ describe('dikstra', () => {
             [0, 0, 1, 0, 0],
         ]);
     });
-})
+
+    it("should construct graph by going to nearest neighbour when starting not from 0", () => {
+        const distanceMatrix = calculate_distance_matrix(TEST_POINTS);
+        const graph = construct_nearest_neighbour_graph(distanceMatrix, 1);
+
+        expect(graph).toEqual([
+            [0, 0, 0, 0, 1],
+            [1, 0, 0, 0, 0],
+            [0, 0, 0, 1, 0],
+            [0, 1, 0, 0, 0],
+            [0, 0, 1, 0, 0],
+        ]);
+    });
+});

@@ -1,4 +1,6 @@
+!./.vscode/launch.json
 .vscode
+
 coverage
 node_modules
 dist
