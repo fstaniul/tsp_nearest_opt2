@@ -9,7 +9,6 @@ export function construct_nearest_neighbour_graph(distanceMatrix: Matrix, starti
 
     let currentPoint = startingPoint;
     while (visited.size < points) {
-        if (visited.has(currentPoint)) throw new Error("Visited node twice!");
         visited.add(currentPoint);
 
         let minimumIndex: number | null = null;

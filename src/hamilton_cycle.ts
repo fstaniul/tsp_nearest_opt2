@@ -1,5 +1,10 @@
-import { Point } from "./types/Point";
+import { construct_nearest_neighbour_graph } from "./dikstra";
+import { get_path } from "./graphs";
+import { opt2_corssing_paths } from "./opt2";
+import { Matrix } from "./types/Matrix";
 
-export function calculate_shortest_hamilton_cycle(points: Point[], startingPoint: number): number[] {
-    return [0, 1, 4, 3, 2, 0];
+export function calculate_shortest_hamilton_cycle(distanceMatrix: Matrix, startingPoint: number): number[] {
+    const graph = construct_nearest_neighbour_graph(distanceMatrix, startingPoint);
+    const optimisedGraph = opt2_corssing_paths(graph, distanceMatrix, startingPoint);
+    return get_path(optimisedGraph, startingPoint);
 }

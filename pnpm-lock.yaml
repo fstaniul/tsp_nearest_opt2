@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@types/jest': ^29.2.2
+  '@types/lodash': ^4.14.188
   '@types/node': ^18.11.9
   jest: ^29.2.2
   prettier: ^2.7.1
@@ -11,6 +12,7 @@ specifiers:
 
 devDependencies:
   '@types/jest': 29.2.2
+  '@types/lodash': 4.14.188
   '@types/node': 18.11.9
   jest: 29.2.2_odkjkoia5xunhxkdrka32ib6vi
   prettier: 2.7.1
@@ -728,6 +730,10 @@ packages:
     dependencies:
       expect: 29.2.2
       pretty-format: 29.2.1
+    dev: true
+
+  /@types/lodash/4.14.188:
+    resolution: {integrity: sha512-zmEmF5OIM3rb7SbLCFYoQhO4dGt2FRM9AMkxvA3LaADOF1n8in/zGJlWji9fmafLoNyz+FoL6FE0SLtGIArD7w==}
     dev: true
 
   /@types/node/18.11.9:
